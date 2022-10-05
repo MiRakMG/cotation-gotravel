@@ -1,44 +1,45 @@
 <template>
  <form action="">
-    <label>N° </label><input type="number" required v-model="num">
+    <label>Numéro </label><input type="number" required v-model="num">
     <label>Jour </label><input type="date" required v-model="jour">
     <label>Nombres de voyageurs </label><input type="number" required v-model="nbrVoyageur">
-    <label>Préstations </label><input type="number" required v-model="prestation">
+    <label>Préstations </label><input type="number" required v-model="prestation" placeholder="€">
+    <label>Charges </label><input type="number" required v-model="charges" placeholder="Ar">
     <button class="btn-vert">Valider</button><button class="btn" type="reset">Annuler</button>
  </form>
  <table class="content-table">
     <thead>
     <tr>
-        <th>Numéro</th>
-        <th>Jour</th>
+        <th>Coût Unitaire</th>
+        <th>Charges</th>
         <th>Nombres de voyageurs</th>
-        <th>Préstations</th>
+        <th>Total</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>{{ num }}</td>
-        <td>{{ jour }}</td>
-        <td>{{ nbrVoyageur }}</td>
-        <td>{{ prestation }}</td>
+        <td>{{ prestation*4100 }}</td>
+        <td>{{ charges || 0 }}</td>
+        <td>{{ nbrVoyageur || 0 }}</td>
+        <td>{{ (prestation*4100)+(charges*nbrVoyageur) || 0 }}</td>
     </tr>
     <tr>
-        <td>{{ num }}</td>
-        <td>{{ jour }}</td>
-        <td>{{ nbrVoyageur }}</td>
-        <td>{{ prestation }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
     </tr>
     <tr>
-        <td>{{ num }}</td>
-        <td>{{ jour }}</td>
-        <td>{{ nbrVoyageur }}</td>
-        <td>{{ prestation }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
     </tr>
     <tr>
-        <td>{{ num }}</td>
-        <td>{{ jour }}</td>
-        <td>{{ nbrVoyageur }}</td>
-        <td>{{ prestation }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
     </tr>
     </tbody>
  </table>
@@ -51,7 +52,8 @@
                 num: '',
                 jour: '',
                 nbrVoyageur: '',
-                prestation: ''
+                prestation: '',
+                charges: ''
             }
         }
     }

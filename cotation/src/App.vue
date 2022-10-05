@@ -1,15 +1,13 @@
 <template>
   <cotation />
-  <tables />
 </template>
 
 <script>
   import cotation from './components/cotation.vue'
-  import tables from './components/tables.vue'
 
   export default {
     name: 'App',
-    components: { cotation, tables },
+    components: { cotation },
   }
 </script>
 
